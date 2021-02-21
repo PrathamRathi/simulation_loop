@@ -6,12 +6,12 @@ import math
 from simulation_loop.msg import joystick_values
 import uinput
 
-def publisher():
+def keyPresser():
     #defines a topic and sends it the message file
     pub = rospy.Publisher('jstick_values', joystick_values, queue_size = 10)
 
     #gives a name to our node
-    rospy.init_node('publisher', anonymous=True)
+    rospy.init_node('keyPresser', anonymous=True)
 
     #sets node frequency at 5hz
     rate = rospy.Rate(5)
@@ -51,6 +51,6 @@ def publisher():
 
 if __name__ == "__main__":
     try:
-        publisher()
+        keyPresser()
     except rospy.ROSInterruptException:
         pass
